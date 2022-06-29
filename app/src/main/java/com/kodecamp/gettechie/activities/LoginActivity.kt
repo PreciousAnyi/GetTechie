@@ -2,6 +2,7 @@ package com.kodecamp.gettechie.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -35,11 +36,15 @@ class LoginActivity : AppCompatActivity() {
         if (requestCode == RC_SIGN_IN) {
             val task= GoogleSignIn.getSignedInAccountFromIntent(data)
             handleSignInResult(task)
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            Log.v("bloob","i'm working")
         }
     }
     private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
         try {
             val account: GoogleSignInAccount = completedTask.getResult(ApiException::class.java)
+
 //            user_name.text=account.displayName
             // Signed in successfully, show authenticated UI.
 //            val myIntent = Intent(this, IntroFRagment::class.java)
