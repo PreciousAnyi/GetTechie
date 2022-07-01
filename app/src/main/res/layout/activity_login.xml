@@ -15,7 +15,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/button"
         android:fontFamily="@font/open_sans_bold"
-        android:text="Log in"
+        android:text="@string/log_in"
         android:textAllCaps="false"
         android:textColor="#F8F7F7"
         android:textSize="24sp"
@@ -31,7 +31,8 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/open_sans_bold"
-        android:text="Remember me"
+        android:minHeight="48dp"
+        android:text="@string/remember_me"
         android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/log_in_auth"
@@ -46,12 +47,15 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/edittext"
         android:clickable="true"
+        android:contentDescription="@string/todo"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:srcCompat="@drawable/google" />
+        app:srcCompat="@drawable/google"
+        tools:ignore="DuplicateSpeakableTextCheck"
+        android:focusable="true" />
 
     <ImageView
         android:id="@+id/textView9"
@@ -61,11 +65,14 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/edittext"
         android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/log_in_button"
-        app:srcCompat="@drawable/facebook" />
+        app:srcCompat="@drawable/facebook"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -78,7 +85,8 @@
         app:layout_constraintEnd_toStartOf="@+id/textView7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:srcCompat="@drawable/line" />
+        app:srcCompat="@drawable/line"
+        android:contentDescription="@string/todo_" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -91,19 +99,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:srcCompat="@drawable/line" />
+        app:srcCompat="@drawable/line"
+        android:contentDescription="@string/todo__" />
 
     <TextView
         android:id="@+id/log_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="40dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/open_sans_bold"
         android:gravity="center_horizontal|top"
-        android:text="LOG IN"
+        android:text="@string/log_in_"
         android:textColor="#0C67B0"
         android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
@@ -119,7 +128,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="100dp"
         android:fontFamily="@font/open_sans_bold"
-        android:text="Email Address"
+        android:text="@string/email_address"
         android:textColor="#101010"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textInputEditText"
@@ -133,7 +142,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/open_sans_bold"
-        android:text="Password"
+        android:text="@string/password"
         android:textColor="#101010"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textInputEditText2"
@@ -149,12 +158,13 @@
         android:layout_marginTop="8dp"
         android:layout_weight="1"
         android:fontFamily="@font/open_sans_bold"
-        android:text="Password should be atleast 8 characters long "
+        android:text="@string/password_should_be_atleast_8_characters_long"
         android:textColor="#989798"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/checkBox"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputEditText2" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputEditText2"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/textView4"
@@ -163,7 +173,7 @@
         android:layout_marginBottom="24dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/open_sans_bold"
-        android:text="Forgot password?"
+        android:text="@string/forgot_password"
         android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/log_in_auth"
@@ -176,7 +186,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/open_sans_bold"
-        android:text=" Sign up"
+        android:text="@string/sign_up"
         android:textColor="#0C67B0"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
@@ -191,13 +201,14 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/open_sans_bold"
-        android:text="Don’t have  an account? "
+        android:text="@string/don_t_have_an_account"
         android:textColor="#767475"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toStartOf="@+id/textView5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/log_in_auth" />
+        app:layout_constraintTop_toBottomOf="@+id/log_in_auth"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/textView7"
@@ -208,7 +219,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/open_sans_bold"
-        android:text="Or continue with"
+        android:text="@string/or_continue_with"
         android:textColor="#312F30"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/log_in_button"
@@ -216,43 +227,66 @@
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputEditText"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/edittext"
-        android:hint="Input your email address"
+        android:hint="@string/input_your_email_address"
         android:inputType="textEmailAddress"
         android:lineSpacingExtra="16sp"
-        android:padding="15dp"
         android:textAlignment="textStart"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
-    <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:inputType="none|textWebEmailAddress"
+            android:paddingStart="20dp"
+            android:textSize="16sp"
+            tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputEditText2"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/edittext"
-        android:drawableRight="@drawable/ic_baseline_remove_red_eye_24"
-        android:hint="Input your password"
-        android:inputType="textEmailAddress"
+        android:drawableEnd="@drawable/ic_baseline_remove_red_eye_24"
+        android:hint="@string/input_your_password"
         android:lineSpacingExtra="16sp"
-        android:padding="15dp"
         android:textAlignment="textStart"
         android:textSize="16sp"
+        app:boxBackgroundMode="none"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:drawableEnd="@drawable/ic_baseline_remove_red_eye_24"
+            android:inputType="none|textPassword"
+            android:paddingEnd="15dp"
+            android:paddingStart="20dp"
+            android:textSize="16sp"
+            tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
