@@ -195,13 +195,15 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/signup_button"
         android:layout_width="348dp"
         android:layout_height="56dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/blue"
+        android:fontFamily="@font/open_sans_bold"
         android:text="Sign up"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -212,32 +214,31 @@
         android:id="@+id/accountTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/open_sans_light"
         android:text="Already have an account?"
         android:textAlignment="center"
         android:textColor="@color/light_grey"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintHorizontal_bias="0.257"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/signup_button"
         app:lineHeight="40dp" />
 
     <TextView
         android:id="@+id/loginTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/open_sans_light"
         android:text="Log in"
         android:textAlignment="center"
         android:textColor="@color/blue"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toEndOf="@+id/accountTV"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/signup_button"
         app:lineHeight="40dp" />
 
 
