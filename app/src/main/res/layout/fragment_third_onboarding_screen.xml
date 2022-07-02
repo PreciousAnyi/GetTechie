@@ -1,42 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstOnboardingScreen">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ThirdOnboardingScreen">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/skip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
-        app:cardElevation="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/open_sans_semibold"
-                android:text="Skip"
-                android:textSize="18sp" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="6dp"
-                android:src="@drawable/arrow_vector2" />
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -47,38 +16,37 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.008">
+        app:layout_constraintVertical_bias="0.083">
 
         <ImageView
             android:id="@+id/main_circle"
-            android:layout_width="229dp"
-            android:layout_height="227dp"
-            android:layout_marginStart="72dp"
-            android:layout_marginTop="120dp"
+            android:layout_width="250dp"
+            android:layout_height="239dp"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="72dp"
             android:src="@drawable/main_ellipse"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/onboarding_image1"
-            android:layout_width="305dp"
-            android:layout_height="354dp"
-            android:layout_marginTop="48dp"
-            android:src="@drawable/onboarding_image1a"
+            android:id="@+id/onboarding_image3"
+            android:layout_width="352dp"
+            android:layout_height="317dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/onboarding_image3a"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.358"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="26dp"
-            android:layout_height="38dp"
-            android:layout_marginTop="120dp"
-            android:layout_marginRight="81.61px"
+            android:layout_width="28dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="84dp"
             android:src="@drawable/idea"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.627"
+            app:layout_constraintHorizontal_bias="0.268"
             app:layout_constraintStart_toEndOf="@+id/imageView7"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -86,20 +54,9 @@
             android:id="@+id/imageView4"
             android:layout_width="30dp"
             android:layout_height="31dp"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="144dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="132dp"
             android:src="@drawable/small_ellipse"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="30dp"
-            android:layout_height="31dp"
-            android:layout_marginTop="56dp"
-            android:src="@drawable/small_ellipse"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.559"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -115,22 +72,32 @@
 
         <ImageView
             android:id="@+id/imageView7"
-            android:layout_width="23dp"
-            android:layout_height="22dp"
-            android:layout_marginStart="260dp"
-            android:layout_marginTop="96dp"
+            android:layout_width="35dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="292dp"
+            android:layout_marginTop="72dp"
             android:src="@drawable/mini_ellipse"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageView8"
-            android:layout_width="25dp"
-            android:layout_height="29dp"
+            android:layout_width="23dp"
+            android:layout_height="22dp"
             android:layout_marginStart="72dp"
             android:layout_marginTop="64dp"
             android:src="@drawable/mini_ellipse"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="30dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/small_ellipse"
+            app:layout_constraintEnd_toEndOf="@+id/imageView7"
             app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -142,9 +109,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/open_sans_bold"
-        android:text="Learning everywhere"
+        android:text="Find the best online course"
         android:textColor="@color/black"
-        android:textSize="28sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -157,30 +124,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/open_sans_light"
-        android:text="Learn wherever you are"
+        android:text="Gain access to over 2000+ courses"
+        android:textAlignment="center"
         android:textColor="@color/light_grey"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:lineHeight="40dp" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:fontFamily="@font/open_sans_light"
-        android:text="SWIPE TO CONTINUE"
-        android:textColor="@color/light_grey"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -201,7 +157,7 @@
                 android:id="@+id/indicator1"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
-                android:background="@color/blue" />
+                android:background="@color/light_grey" />
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
@@ -227,9 +183,56 @@
                 android:id="@+id/indicator3"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
-                android:background="@color/light_grey" />
+                android:background="@color/blue" />
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="348dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/blue"
+        android:text="Sign up"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/accountTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/open_sans_light"
+        android:text="Already have an account?"
+        android:textAlignment="center"
+        android:textColor="@color/light_grey"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:lineHeight="40dp" />
+
+    <TextView
+        android:id="@+id/loginTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/open_sans_light"
+        android:text="Log in"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toEndOf="@+id/accountTV"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:lineHeight="40dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

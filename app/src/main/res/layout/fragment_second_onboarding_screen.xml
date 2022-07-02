@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstOnboardingScreen">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SecondOnboardingScreen">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/skip"
+        android:id="@+id/skip2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         app:cardElevation="0dp"
+        app:cardMaxElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/white"
+        app:strokeWidth="0dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/open_sans_semibold"
-                android:text="Skip"
+                android:text="@string/skip"
                 android:textSize="18sp" />
 
             <ImageView
@@ -33,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="6dp"
-                android:src="@drawable/arrow_vector2" />
+                android:src="@drawable/arrow_vector1" />
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -47,38 +51,38 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.008">
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageView
             android:id="@+id/main_circle"
-            android:layout_width="229dp"
-            android:layout_height="227dp"
-            android:layout_marginStart="72dp"
-            android:layout_marginTop="120dp"
+            android:layout_width="250dp"
+            android:layout_height="239dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="100dp"
             android:src="@drawable/main_ellipse"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/onboarding_image1"
-            android:layout_width="305dp"
-            android:layout_height="354dp"
-            android:layout_marginTop="48dp"
-            android:src="@drawable/onboarding_image1a"
+            android:id="@+id/onboarding_image2"
+            android:layout_width="378dp"
+            android:layout_height="340dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/onboarding_image2a"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.358"
+            app:layout_constraintHorizontal_bias="0.212"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="26dp"
-            android:layout_height="38dp"
-            android:layout_marginTop="120dp"
+            android:layout_width="24dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="116dp"
             android:layout_marginRight="81.61px"
             android:src="@drawable/idea"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.627"
+            app:layout_constraintHorizontal_bias="0.579"
             app:layout_constraintStart_toEndOf="@+id/imageView7"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -96,10 +100,10 @@
             android:id="@+id/imageView5"
             android:layout_width="30dp"
             android:layout_height="31dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="44dp"
             android:src="@drawable/small_ellipse"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.559"
+            app:layout_constraintHorizontal_bias="0.356"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -117,7 +121,7 @@
             android:id="@+id/imageView7"
             android:layout_width="23dp"
             android:layout_height="22dp"
-            android:layout_marginStart="260dp"
+            android:layout_marginStart="276dp"
             android:layout_marginTop="96dp"
             android:src="@drawable/mini_ellipse"
             app:layout_constraintStart_toStartOf="parent"
@@ -125,8 +129,8 @@
 
         <ImageView
             android:id="@+id/imageView8"
-            android:layout_width="25dp"
-            android:layout_height="29dp"
+            android:layout_width="23dp"
+            android:layout_height="22dp"
             android:layout_marginStart="72dp"
             android:layout_marginTop="64dp"
             android:src="@drawable/mini_ellipse"
@@ -142,7 +146,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/open_sans_bold"
-        android:text="Learning everywhere"
+        android:text="Self development"
         android:textColor="@color/black"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -157,18 +161,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/open_sans_light"
-        android:text="Learn wherever you are"
+        android:text="Learn fundamental skills from
+        international tutors"
+        android:textAlignment="center"
         android:textColor="@color/light_grey"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:lineHeight="40dp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="108dp"
         android:fontFamily="@font/open_sans_light"
         android:text="SWIPE TO CONTINUE"
         android:textColor="@color/light_grey"
@@ -177,10 +184,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -190,7 +196,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.157">
+        app:layout_constraintVertical_bias="0.112">
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
@@ -201,7 +207,7 @@
                 android:id="@+id/indicator1"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
-                android:background="@color/blue" />
+                android:background="@color/light_grey"/>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
@@ -214,7 +220,7 @@
                 android:id="@+id/indicator2"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
-                android:background="@color/light_grey" />
+                android:background="@color/blue"/>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
@@ -227,9 +233,8 @@
                 android:id="@+id/indicator3"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
-                android:background="@color/light_grey" />
+                android:background="@color/light_grey"/>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
