@@ -9,4 +9,14 @@
         android:name="com.kodecamp.gettechie.OnboardingViewPager"
         android:label="fragment_onboarding_view_pager"
         tools:layout="@layout/fragment_onboarding_view_pager" />
+    <activity
+        android:id="@+id/splashActivity"
+        android:name="com.kodecamp.gettechie.activities.SplashActivity"
+        android:label="splashlayout"
+        tools:layout="@layout/splashlayout" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.kodecamp.gettechie.activities.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
 </navigation>

@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
         if (requestCode == RC_SIGN_IN) {
             val task= GoogleSignIn.getSignedInAccountFromIntent(data)
             handleSignInResult(task)
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, OnboardingActivity::class.java)
             startActivity(intent)
             Log.v("bloob","i'm working")
         }
