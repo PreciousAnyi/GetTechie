@@ -21,7 +21,9 @@
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".activities.MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:exported="false"
+            android:noHistory="true"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
         <activity
             android:name=".activities.SplashActivity"
             android:exported="true"
