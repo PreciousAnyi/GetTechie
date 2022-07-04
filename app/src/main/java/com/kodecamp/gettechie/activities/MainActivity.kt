@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         backPressedTime = System.currentTimeMillis()
 
     }
+
     private fun show_dialog() {
         MaterialAlertDialogBuilder(this, R.style.AlertDialogTheme)
             .setTitle("Get Techie")
@@ -54,6 +55,7 @@ class MainActivity : AppCompatActivity() {
             ) { dialogInterface, i -> }
             .show()
     }
+
     override fun onDestroy() {
         super.onDestroy()
         exitProcess(2)
