@@ -50,7 +50,7 @@
         android:clickable="true"
         android:contentDescription="@string/todo"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintBottom_toTopOf="@+id/fbLogin_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
@@ -59,12 +59,13 @@
         android:focusable="true" />
 
     <ImageView
-        android:id="@+id/textView9"
+        android:id="@+id/fbLogin_button"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginBottom="35dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/edittext"
+        android:textAlignment="center"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
