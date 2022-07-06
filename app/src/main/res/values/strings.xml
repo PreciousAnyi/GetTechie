@@ -15,4 +15,8 @@
     <string name="todo_">TODO</string>
     <string name="todo__">TODO</string>
     <string name="remember_me">Remember me</string>
+
+    <string name="facebook_app_id">4823654827740439</string>
+    <string name="fb_login_protocol_scheme">fb4823654827740439</string>
+    <string name="facebook_client_token">f0b5186efdd726bffd52e40a525c41f1</string>
 </resources>
