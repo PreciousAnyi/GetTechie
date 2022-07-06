@@ -12,7 +12,7 @@
         android:theme="@style/Theme.GetTechie">
         <activity
             android:name=".activities.LoginActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:theme="@style/Theme.GetTechie"
             android:noHistory="true"
             android:exported="false" />
         <activity
