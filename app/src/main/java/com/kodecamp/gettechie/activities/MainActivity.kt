@@ -12,6 +12,7 @@ import kotlin.system.exitProcess
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_GetTechie)
         setContentView(R.layout.activity_main)
         val theText: TextView = findViewById(R.id.text)
         theText.setOnClickListener {

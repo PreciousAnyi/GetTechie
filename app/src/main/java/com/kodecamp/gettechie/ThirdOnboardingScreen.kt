@@ -1,6 +1,5 @@
 package com.kodecamp.gettechie
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.kodecamp.gettechie.activities.LoginActivity
+import androidx.navigation.fragment.findNavController
 
 
 class ThirdOnboardingScreen : Fragment() {
@@ -21,12 +20,10 @@ class ThirdOnboardingScreen : Fragment() {
         val view = inflater.inflate(R.layout.fragment_third_onboarding_screen, container, false)
         view.findViewById<Button>(R.id.signup_button).setOnClickListener {
 
-            val intent = Intent(requireContext(), LoginActivity::class.java)
-            startActivity(intent)
+            findNavController().navigate(R.id.action_fragmentOnboarding_to_loginFragment)
         }
         view.findViewById<TextView>(R.id.loginTV).setOnClickListener {
-            val intent = Intent(requireContext(), LoginActivity::class.java)
-            startActivity(intent)
+            findNavController().navigate(R.id.action_fragmentOnboarding_to_loginFragment)
         }
 
         return view
