@@ -29,11 +29,13 @@ import com.google.android.gms.tasks.Task
 import com.kodecamp.gettechie.R
 import com.kodecamp.gettechie.databinding.ActivityLoginBinding
 import com.kodecamp.gettechie.databinding.ActivityMainBinding
+import org.json.JSONObject
 
 
 const val RC_SIGN_IN=456
 class LoginActivity : AppCompatActivity() {
     @Suppress("DEPRECATION")
+    lateinit var callbackManager : CallbackManager
     private lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
