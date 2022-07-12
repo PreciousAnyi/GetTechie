@@ -61,5 +61,6 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         exitProcess(2)
     }
+
 }
 
