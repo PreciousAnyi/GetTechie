@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Get Techie</string>
-    <string name="log_in">Log in</string>
-    <string name="sign_up">Sign up</string>
     <string name="don_t_have_an_account">Don’t have an account?</string>
     <string name="password_should_be_atleast_8_characters_long">Password should be atleast 8 characters long</string>
     <string name="forgot_password">Forgot password?</string>
@@ -21,8 +19,10 @@
     <string name="facebook_client_token">f0b5186efdd726bffd52e40a525c41f1</string>
     <string name="create_a_new_password">Create a new password?</string>
     <string name="Createpssnote">Your new password must be different from your previous used password</string>
-=======
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
->>>>>>> dev
+    <string name="SignuplogIn">Log in</string>
+    <string name="loginsign_up">Sign Up</string>
+    <string name="log_in">Log in</string>
+    <string name="sign_up">Sign Up</string>
 </resources>

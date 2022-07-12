@@ -1,11 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ThirdOnboardingScreen">
+    android:padding="15dp"
+    tools:context=".fragments.ThirdOnboardingScreen">
 
+
+    <Button
+        android:id="@+id/signup_button"
+        android:layout_width="348dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Sign up"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.157">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/indicator1"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@color/light_grey" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/indicator2"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@color/light_grey" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/indicator3"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@color/blue" />
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Find the best online course"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans_light"
+        android:text="Gain access to over 2000+ courses"
+        android:textAlignment="center"
+        android:textColor="@color/light_grey"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:lineHeight="40dp" />
+
+
+    <TextView
+        android:id="@+id/accountTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans_light"
+        android:text="Already have an account?"
+        android:textAlignment="center"
+        android:textColor="@color/light_grey"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.257"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signup_button"
+        app:lineHeight="40dp" />
+
+    <TextView
+        android:id="@+id/loginTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans_light"
+        android:text="Log in"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/accountTV"
+        app:layout_constraintTop_toBottomOf="@+id/signup_button"
+        app:lineHeight="40dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -99,8 +231,8 @@
             android:id="@+id/imageView5"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginTop="4dp"
             android:src="@drawable/small_ellipse"
             app:layout_constraintEnd_toEndOf="@+id/imageView7"
             app:layout_constraintTop_toTopOf="parent"
@@ -108,138 +240,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/open_sans_bold"
-        android:text="Find the best online course"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/open_sans_light"
-        android:text="Gain access to over 2000+ courses"
-        android:textAlignment="center"
-        android:textColor="@color/light_grey"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:lineHeight="40dp" />
-
-
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.157">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="10dp">
-
-            <ImageView
-                android:id="@+id/indicator1"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:background="@color/light_grey" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            app:cardCornerRadius="10dp">
-
-            <ImageView
-                android:id="@+id/indicator2"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:background="@color/light_grey" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            app:cardCornerRadius="10dp">
-
-            <ImageView
-                android:id="@+id/indicator3"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:background="@color/blue" />
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
-
-
-    <Button
-        android:id="@+id/signup_button"
-        android:layout_width="348dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/blue"
-        android:fontFamily="@font/open_sans_bold"
-        android:text="Sign up"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <TextView
-        android:id="@+id/accountTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/open_sans_light"
-        android:text="Already have an account?"
-        android:textAlignment="center"
-        android:textColor="@color/light_grey"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.257"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup_button"
-        app:lineHeight="40dp" />
-
-    <TextView
-        android:id="@+id/loginTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/open_sans_light"
-        android:text="Log in"
-        android:textAlignment="center"
-        android:textColor="@color/blue"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/accountTV"
-        app:layout_constraintTop_toBottomOf="@+id/signup_button"
-        app:lineHeight="40dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

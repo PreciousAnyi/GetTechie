@@ -1,4 +1,4 @@
-package com.kodecamp.gettechie.activities
+package com.kodecamp.gettechie.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
