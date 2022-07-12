@@ -5,8 +5,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.facebook.CallbackManager
@@ -27,22 +31,35 @@ import org.json.JSONObject
 
 const val RC_SIGN_IN = 456
 
-class LoginFragment : Fragment(R.layout.fragment_login) {
+class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     lateinit var callbackManager: CallbackManager
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding = FragmentLoginBinding.bind(view)
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
         val googlelogin = binding.logInButton
         val login = binding.logInAuth
         val check = binding.checkBox
         binding.logInAuth.alpha = .25f
-        emailValidationListener()
-        passwordValidationListener()
+        binding.signup.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
+        }
+//        on text change in the edit text it starts validating
+        binding.EmailEdit.doOnTextChanged { text, start, before, count ->
+            binding.EmailContainer.error=validEmail()
+            validateButton()
+        }
+        binding.PasswordEdit.doOnTextChanged { text, start, before, count ->
+            binding.PasswordContainer.error=validPassword()
+            validateButton()
 
-
+        }
         //on textview clicked it takes you from this fragment to the forgot password fragment
-        binding.textView4.setOnClickListener {
+        binding.forgot.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
 
         }
@@ -53,8 +70,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         val checkbox: String? = sharedPref?.getString("remember_key", "")
 
         if (checkbox.equals("true")) {
-            val intent = Intent(context, MainActivity::class.java)
-            startActivity(intent)
+//            val intent = Intent(context, MainActivity::class.java)
+//            startActivity(intent)
         }
         /////////////////////////////////////////////////////////////////////////////////////
 //        dont forget sharedPref codes to implement in logout listener for rememeber me to effect the else if
@@ -71,24 +88,23 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             val mGoogleSignInClient = GoogleSignIn.getClient(activity!!, gso)
             val check_log_in: GoogleSignInAccount? = GoogleSignIn.getLastSignedInAccount(activity!!)
             if (check_log_in != null) {
-                val intent = Intent(context, MainActivity::class.java)
-                startActivity(intent)
+//                val intent = Intent(context, MainActivity::class.java)
+//                startActivity(intent)
             }
-
             googlelogin.setOnClickListener {
                 val signInIntent = mGoogleSignInClient.getSignInIntent()
                 startActivityForResult(signInIntent, RC_SIGN_IN)
-
             }
         }
+
         login.setOnClickListener {
             if (binding.logInAuth.alpha == .25f) {
                 val toast =
                     Toast.makeText(context, "Please Input Sign In Details", Toast.LENGTH_LONG)
                 toast.show()
             } else {
-                val intent = Intent(context, MainActivity::class.java)
-                startActivity(intent)
+//                val intent = Intent(context, MainActivity::class.java)
+//                startActivity(intent)
             }
         }
 
@@ -103,19 +119,11 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         binding.fbLoginButton.setOnClickListener {
             loginWithFacebook()
         }
+        return binding.root
 
 
     }
 
-    private fun passwordValidationListener() {
-        binding.PasswordEdit.setOnFocusChangeListener { _, focused ->
-            if (!focused) {
-                binding.PasswordContainer.helperText = validPassword()
-                validateButton()
-            }
-
-        }
-    }
 
     private fun validPassword(): String? {
         val password = binding.PasswordEdit.text.toString()
@@ -135,8 +143,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     }
 
     private fun validateButton() {
-        val validEmail = binding.EmailContainer.helperText == null
-        val validPassword = binding.PasswordContainer.helperText == null
+        val validEmail = binding.EmailContainer.error == null
+        val validPassword = binding.PasswordContainer.error == null
         if (validEmail && validPassword) {
             binding.logInAuth.alpha = 1f
             binding.logInAuth.isEnabled = true
@@ -145,13 +153,6 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         }
     }
 
-    private fun emailValidationListener() {
-        binding.EmailEdit.setOnFocusChangeListener { _, focused ->
-            if (!focused) {
-                binding.EmailContainer.helperText = validEmail()
-            }
-        }
-    }
 
     private fun validEmail(): String? {
         val email = binding.EmailEdit.text.toString()
@@ -171,8 +172,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         if (requestCode == RC_SIGN_IN) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             handleSignInResult(task)
-            val intent = Intent(context, MainActivity::class.java)
-            startActivity(intent)
+//            val intent = Intent(context, MainActivity::class.java)
+//            startActivity(intent)
 //            Log.v("bloob","i'm working")
         }
         callbackManager.onActivityResult(requestCode, resultCode, data)
@@ -199,8 +200,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             .registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
                 override fun onSuccess(result: LoginResult) {
                     result.let {
-                        val intent = Intent(context, MainActivity::class.java)
-                        startActivity(intent)
+//                        val intent = Intent(context, MainActivity::class.java)
+//                        startActivity(intent)
                         val graphRequest =
                             GraphRequest.newMeRequest(result?.accessToken) { `object`, response ->
                                 getFacebookData(`object`)

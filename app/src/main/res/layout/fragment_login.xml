@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="30dp"
     android:id="@+id/loginActivity"
-    tools:context=".activities.LoginActivity">
+    tools:context=".activities.LoginFragment">
 
 
     <Button
@@ -21,7 +21,7 @@
         android:textAllCaps="false"
         android:textColor="#F8F7F7"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintBottom_toTopOf="@+id/signup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox" />
@@ -102,7 +102,7 @@
         app:layout_constraintBottom_toTopOf="@+id/log_in_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/signup"
         app:srcCompat="@drawable/line"
         android:contentDescription="@string/todo__" />
 
@@ -113,7 +113,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="40dp"
-        android:layout_marginTop="8dp"
         android:fontFamily="@font/open_sans_bold"
         android:gravity="center_horizontal|top"
         android:text="@string/log_in_"
@@ -130,7 +129,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="@font/open_sans_bold"
         android:text="@string/email_address"
         android:textColor="#101010"
@@ -171,7 +170,7 @@
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/forgot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
@@ -185,7 +184,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -209,7 +208,7 @@
         android:textColor="#767475"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
-        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintEnd_toStartOf="@+id/signup"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/log_in_auth"
         tools:ignore="TextContrastCheck" />
@@ -229,7 +228,7 @@
         app:layout_constraintBottom_toTopOf="@+id/log_in_button"
         app:layout_constraintEnd_toStartOf="@+id/imageView2"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/signup" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/EmailContainer"
@@ -240,6 +239,8 @@
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@null"
         app:helperTextTextColor="#E81515"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
@@ -280,6 +281,8 @@
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
         app:helperTextTextColor="#E81515"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@null"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"

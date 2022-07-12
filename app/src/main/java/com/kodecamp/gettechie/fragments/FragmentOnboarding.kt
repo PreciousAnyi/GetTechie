@@ -1,13 +1,11 @@
-package com.kodecamp.gettechie.activities
+package com.kodecamp.gettechie.fragments
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
-import com.kodecamp.gettechie.FirstOnboardingScreen
 import com.kodecamp.gettechie.R
-import com.kodecamp.gettechie.SecondOnboardingScreen
-import com.kodecamp.gettechie.ThirdOnboardingScreen
+import com.kodecamp.gettechie.adapter.ViewPagerAdapter
 
 
 class FragmentOnboarding : Fragment(R.layout.fragment_onboarding) {

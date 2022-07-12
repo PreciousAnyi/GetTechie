@@ -12,19 +12,52 @@
         <action
             android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.kodecamp.gettechie.activities.ForgotPasswordFragment"
+        android:name="com.kodecamp.gettechie.fragments.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
-        tools:layout="@layout/fragment_forgot_password" />
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentOnboarding"
-        android:name="com.kodecamp.gettechie.activities.FragmentOnboarding"
+        android:name="com.kodecamp.gettechie.fragments.FragmentOnboarding"
         android:label="fragment_onboarding"
         tools:layout="@layout/fragment_onboarding">
         <action
             android:id="@+id/action_fragmentOnboarding_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_fragmentOnboarding_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.kodecamp.gettechie.fragments.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.kodecamp.gettechie.fragments.ResetPasswordFragment"
+        android:label="fragment_reset_password"
+        tools:layout="@layout/fragment_reset_password" >
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_createPasswordFragment"
+            app:destination="@id/createPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createPasswordFragment"
+        android:name="com.kodecamp.gettechie.fragments.createPasswordFragment"
+        android:label="fragment_create_password"
+        tools:layout="@layout/fragment_create_password" />
 </navigation>

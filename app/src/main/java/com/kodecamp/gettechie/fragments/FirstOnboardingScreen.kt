@@ -1,4 +1,4 @@
-package com.kodecamp.gettechie
+package com.kodecamp.gettechie.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,9 +7,10 @@ import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
+import com.kodecamp.gettechie.R
 
 
-class SecondOnboardingScreen : Fragment() {
+class FirstOnboardingScreen : Fragment() {
 
 
     override fun onCreateView(
@@ -17,10 +18,10 @@ class SecondOnboardingScreen : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_second_onboarding_screen, container, false)
+        val view = inflater.inflate(R.layout.fragment_first_onboarding_screen, container, false)
 
         val viewpager = activity?.findViewById<ViewPager2>(R.id.viewpager2)
-        view.findViewById<CardView>(R.id.skip2).setOnClickListener {
+        view.findViewById<CardView>(R.id.skip).setOnClickListener {
 
             viewpager?.currentItem = 2
         }
