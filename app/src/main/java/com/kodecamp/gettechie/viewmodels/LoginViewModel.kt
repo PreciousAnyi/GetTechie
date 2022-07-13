@@ -1,4 +1,4 @@
-package com.kodecamp.gettechie.activities
+package com.kodecamp.gettechie.viewmodels
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.Flow
