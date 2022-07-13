@@ -8,6 +8,8 @@ import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
@@ -22,6 +24,8 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.kodecamp.gettechie.R
 import com.kodecamp.gettechie.databinding.FragmentLoginBinding
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 import org.json.JSONObject
 
 
@@ -29,6 +33,9 @@ const val RC_SIGN_IN = 456
 
 class LoginFragment : Fragment(R.layout.fragment_login) {
     private lateinit var binding: FragmentLoginBinding
+
+    //adding viewModel instance
+    private val viewModel by viewModels<LoginViewModel>()
     lateinit var callbackManager: CallbackManager
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -40,6 +47,18 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         emailValidationListener()
         passwordValidationListener()
 
+        lifecycleScope.launchWhenResumed {
+            launch {
+                viewModel.email.collectLatest {
+                    binding.EmailEdit.setText(it)
+                }
+            }
+            launch {
+                viewModel.password.collectLatest {
+                    binding.PasswordEdit.setText(it)
+                }
+            }
+        }
 
         //on textview clicked it takes you from this fragment to the forgot password fragment
         binding.textView4.setOnClickListener {
@@ -105,6 +124,13 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         }
 
 
+    }
+
+
+    override fun onPause() {
+        super.onPause()
+        viewModel.updateEmail(binding.EmailEdit.text.toString())
+        viewModel.updatePassword(binding.PasswordEdit.text.toString())
     }
 
     private fun passwordValidationListener() {

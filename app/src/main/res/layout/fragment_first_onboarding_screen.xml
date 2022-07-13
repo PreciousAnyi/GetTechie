@@ -123,10 +123,9 @@
             android:id="@+id/imageView7"
             android:layout_width="22dp"
             android:layout_height="22dp"
-            android:layout_marginStart="260dp"
             android:layout_marginTop="96dp"
             android:src="@drawable/mini_ellipse"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/Circle" />
 
