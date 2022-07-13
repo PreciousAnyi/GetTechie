@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.facebook.CallbackManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.kodecamp.gettechie.R
 import kotlin.system.exitProcess
@@ -39,7 +40,6 @@ class MainActivity : AppCompatActivity() {
         if (backPressedTime + 3000 > System.currentTimeMillis()) {
             show_dialog()
         } else {
-
             Toast.makeText(this, "Press back again to leave the app.", Toast.LENGTH_LONG).show()
         }
         backPressedTime = System.currentTimeMillis()

@@ -41,7 +41,6 @@ class LoginFragment : Fragment() {
     //adding viewModel instance
     private val viewModel by viewModels<LoginViewModel>()
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -229,8 +228,12 @@ class LoginFragment : Fragment() {
             .registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
                 override fun onSuccess(result: LoginResult) {
                     result.let {
-//                        val intent = Intent(context, MainActivity::class.java)
-//                        startActivity(intent)
+                        val intent = Intent(context, MainActivity::class.java)
+                        startActivity(intent)
+
+//                        val fragTransaction = fragmentManager?.beginTransaction()
+//                        fragTransaction.replace(R.id.)
+
                         val graphRequest =
                             GraphRequest.newMeRequest(result?.accessToken) { `object`, response ->
                                 getFacebookData(`object`)
