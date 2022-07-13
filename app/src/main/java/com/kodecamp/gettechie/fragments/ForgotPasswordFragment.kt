@@ -1,7 +1,6 @@
 package com.kodecamp.gettechie.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
@@ -11,10 +10,14 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navGraphViewModels
 import com.google.android.material.textfield.TextInputEditText
 import com.kodecamp.gettechie.R
 import com.kodecamp.gettechie.databinding.FragmentForgotPasswordBinding
+import com.kodecamp.gettechie.viewmodels.ForgotPasswordViewModel
+import kotlinx.coroutines.launch
 
 
 class ForgotPasswordFragment : Fragment() {
@@ -23,13 +26,12 @@ class ForgotPasswordFragment : Fragment() {
     private lateinit var continueBtn: Button
     private lateinit var emailEditText: TextInputEditText
     private lateinit var forgotPasswordEmail: EditText
+    private val viewModel by navGraphViewModels<ForgotPasswordViewModel>(R.id.forgot_password_nav)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        /*val view = inflater.inflate(R.layout.fragment_forgot_password, container, false)*/
 
         binding = FragmentForgotPasswordBinding.inflate(inflater, container, false)
 
@@ -74,6 +76,22 @@ class ForgotPasswordFragment : Fragment() {
         }
         return null
 
+    }
+
+    override fun onResume() {
+        lifecycleScope.launch {
+            launch {
+                viewModel.email.collect {
+                    binding.forgotPasswordEmail.setText(it)
+                }
+            }
+        }
+        super.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        viewModel.updateEmail(binding.forgotPasswordEmail.text.toString())
     }
 
 

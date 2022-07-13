@@ -9,9 +9,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
@@ -26,6 +27,8 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.kodecamp.gettechie.R
 import com.kodecamp.gettechie.databinding.FragmentLoginBinding
+import com.kodecamp.gettechie.viewmodels.LoginViewModel
+import kotlinx.coroutines.launch
 import org.json.JSONObject
 
 
@@ -34,6 +37,10 @@ const val RC_SIGN_IN = 456
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     lateinit var callbackManager: CallbackManager
+
+    //adding viewModel instance
+    private val viewModel by viewModels<LoginViewModel>()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -117,9 +124,32 @@ class LoginFragment : Fragment() {
         binding.fbLoginButton.setOnClickListener {
             loginWithFacebook()
         }
+
         return binding.root
 
 
+    }
+
+    override fun onResume() {
+        lifecycleScope.launch {
+            launch {
+                viewModel.email.collect {
+                    binding.EmailEdit.setText(it)
+                }
+            }
+            launch {
+                viewModel.password.collect {
+                    binding.PasswordEdit.setText(it)
+                }
+            }
+        }
+        super.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        viewModel.updateEmail(binding.EmailEdit.text.toString())
+        viewModel.updatePassword(binding.PasswordEdit.text.toString())
     }
 
 
