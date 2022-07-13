@@ -1,4 +1,4 @@
-package com.kodecamp.gettechie.activities
+package com.kodecamp.gettechie.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
