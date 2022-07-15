@@ -21,7 +21,7 @@ class FragmentOnboarding : Fragment(R.layout.fragment_onboarding) {
 
         val adapter = ViewPagerAdapter(
             fragmentList,
-            requireActivity().supportFragmentManager,
+            parentFragmentManager,
             lifecycle
         )
         view.findViewById<ViewPager2>(R.id.viewpager2).adapter = adapter

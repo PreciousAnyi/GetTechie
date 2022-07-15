@@ -14,6 +14,8 @@ import androidx.core.widget.doOnTextChanged
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -22,12 +24,16 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.kodecamp.gettechie.R
 import com.kodecamp.gettechie.databinding.FragmentSignUpBinding
+import com.kodecamp.gettechie.viewmodels.SignUpViewModel
+import kotlinx.coroutines.launch
 
 
 class SignUpFragment : Fragment() {
+
     private  var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
     private lateinit var navCon: NavController
+    private val viewModel by viewModels<SignUpViewModel>()
 
     companion object{
         const val RC_SIGN_IN = 456
@@ -233,5 +239,38 @@ class SignUpFragment : Fragment() {
         }
     }
 
+    override fun onResume() {
+        lifecycleScope.launch {
+            launch {
+                viewModel.email.collect {
+                    binding.EmailEdit.setText(it)
+                }
+            }
+            launch {
+                viewModel.password.collect {
+                    binding.PasswordEdit.setText(it)
+                }
+            }
+            launch {
+                viewModel.confirmPassword.collect {
+                    binding.ConfirmPasswordEdit.setText(it)
+                }
+            }
+            launch {
+                viewModel.name.collect {
+                    binding.NameEdit.setText(it)
+                }
+            }
+            super.onResume()
+        }
 
+    }
+
+    override fun onPause() {
+        super.onPause()
+        viewModel.updateName(binding.NameEdit.text.toString())
+        viewModel.updateEmail(binding.EmailEdit.text.toString())
+        viewModel.updatePassword(binding.PasswordEdit.text.toString())
+        viewModel.updateConfirmPassword(binding.ConfirmPasswordEdit.text.toString())
+    }
 }

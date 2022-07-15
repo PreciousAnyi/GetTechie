@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.facebook.CallbackManager
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -26,7 +27,6 @@ class MainActivity : AppCompatActivity() {
 //        theText.setOnClickListener {
 //            setContentView(R.layout.create_password)
 //        }
-
         ///////////////////////////////////////////////////////////
 //        logout functionality
 //        val text:TextView=findViewById(R.id.text)
@@ -53,7 +53,9 @@ class MainActivity : AppCompatActivity() {
         }
         backPressedTime = System.currentTimeMillis()
 
-    }private fun show_dialog() {
+    }
+
+    private fun show_dialog() {
         MaterialAlertDialogBuilder(this, R.style.AlertDialogTheme)
             .setTitle("Get Techie")
             .setMessage("Do you want to close this application.")
@@ -67,8 +69,6 @@ class MainActivity : AppCompatActivity() {
             ) { dialogInterface, i -> }
             .show()
     }
-
-
 
     override fun onDestroy() {
         super.onDestroy()
