@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -29,13 +28,14 @@ import com.kodecamp.gettechie.databinding.FragmentLoginBinding
 import org.json.JSONObject
 
 
-const val RC_SIGN_IN = 456
 
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     lateinit var callbackManager: CallbackManager
 
-
+    companion object{
+        const val RC_SIGN_IN = 456
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -70,8 +70,7 @@ class LoginFragment : Fragment() {
         val checkbox: String? = sharedPref?.getString("remember_key", "")
 
         if (checkbox.equals("true")) {
-//            val intent = Intent(context, MainActivity::class.java)
-//            startActivity(intent)
+            findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
         }
         /////////////////////////////////////////////////////////////////////////////////////
 //        dont forget sharedPref codes to implement in logout listener for rememeber me to effect the else if
@@ -85,11 +84,10 @@ class LoginFragment : Fragment() {
             val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build()
-            val mGoogleSignInClient = GoogleSignIn.getClient(activity!!, gso)
-            val check_log_in: GoogleSignInAccount? = GoogleSignIn.getLastSignedInAccount(activity!!)
+            val mGoogleSignInClient = GoogleSignIn.getClient(requireContext(), gso)
+            val check_log_in: GoogleSignInAccount? = GoogleSignIn.getLastSignedInAccount(requireContext())
             if (check_log_in != null) {
-//                val intent = Intent(context, MainActivity::class.java)
-//                startActivity(intent)
+                findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
             }
             googlelogin.setOnClickListener {
                 val signInIntent = mGoogleSignInClient.getSignInIntent()
@@ -103,8 +101,7 @@ class LoginFragment : Fragment() {
                     Toast.makeText(context, "Please Input Sign In Details", Toast.LENGTH_LONG)
                 toast.show()
             } else {
-//                val intent = Intent(context, MainActivity::class.java)
-//                startActivity(intent)
+                findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
             }
         }
 
@@ -172,8 +169,7 @@ class LoginFragment : Fragment() {
         if (requestCode == RC_SIGN_IN) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             handleSignInResult(task)
-//            val intent = Intent(context, MainActivity::class.java)
-//            startActivity(intent)
+            findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
 //            Log.v("bloob","i'm working")
         }
         callbackManager.onActivityResult(requestCode, resultCode, data)
@@ -200,8 +196,7 @@ class LoginFragment : Fragment() {
             .registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
                 override fun onSuccess(result: LoginResult) {
                     result.let {
-//                        val intent = Intent(context, MainActivity::class.java)
-//                        startActivity(intent)
+                        findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
                         val graphRequest =
                             GraphRequest.newMeRequest(result?.accessToken) { `object`, response ->
                                 getFacebookData(`object`)
