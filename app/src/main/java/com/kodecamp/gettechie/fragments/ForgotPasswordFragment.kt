@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
@@ -26,7 +27,7 @@ class ForgotPasswordFragment : Fragment() {
     private lateinit var continueBtn: Button
     private lateinit var emailEditText: TextInputEditText
     private lateinit var forgotPasswordEmail: EditText
-    private val viewModel by navGraphViewModels<ForgotPasswordViewModel>(R.id.forgot_password_nav)
+    private val viewModel by viewModels<ForgotPasswordViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

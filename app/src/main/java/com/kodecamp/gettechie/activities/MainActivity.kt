@@ -5,16 +5,24 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.facebook.CallbackManager
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.kodecamp.gettechie.R
+import com.kodecamp.gettechie.databinding.ActivityMainBinding
+import com.kodecamp.gettechie.fragments.SignUpFragmentDirections
 import kotlin.system.exitProcess
 
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var navCon: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_GetTechie)
-        setContentView(R.layout.activity_main)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        val navHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navCon = navHost.navController
 //        val theText: TextView = findViewById(R.id.text)
 //        theText.setOnClickListener {
 //            setContentView(R.layout.create_password)
@@ -40,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         if (backPressedTime + 3000 > System.currentTimeMillis()) {
             show_dialog()
         } else {
+
             Toast.makeText(this, "Press back again to leave the app.", Toast.LENGTH_LONG).show()
         }
         backPressedTime = System.currentTimeMillis()
