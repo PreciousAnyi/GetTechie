@@ -243,22 +243,22 @@ class SignUpFragment : Fragment() {
         lifecycleScope.launch {
             launch {
                 viewModel.email.collect {
-                    binding.EmailEdit.setText(it)
+                    binding.EmailEdit.setText(viewModel.email.toString())
                 }
             }
             launch {
                 viewModel.password.collect {
-                    binding.PasswordEdit.setText(it)
+                    binding.PasswordEdit.setText(viewModel.password.toString())
                 }
             }
             launch {
                 viewModel.confirmPassword.collect {
-                    binding.ConfirmPasswordEdit.setText(it)
+                    binding.ConfirmPasswordEdit.setText(viewModel.confirmPassword.toString())
                 }
             }
             launch {
                 viewModel.name.collect {
-                    binding.NameEdit.setText(it)
+                    binding.NameEdit.setText(viewModel.name.toString())
                 }
             }
             super.onResume()
