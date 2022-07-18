@@ -86,4 +86,18 @@
         android:name="com.kodecamp.gettechie.fragments.BottomMenuFragment"
         android:label="fragment_bottom_menu"
         tools:layout="@layout/fragment_bottom_menu" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.kodecamp.gettechie.fragments.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.kodecamp.gettechie.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
 </navigation>
