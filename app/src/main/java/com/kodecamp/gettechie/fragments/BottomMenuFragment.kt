@@ -26,7 +26,9 @@ class BottomMenuFragment : Fragment() {
             when(it.itemId){
                 R.id.nav_home -> Toast.makeText(context, "Pressed home", Toast.LENGTH_LONG).show()
                 R.id.nav_explore -> Toast.makeText(context, "Pressed explore", Toast.LENGTH_LONG).show()
-                R.id.nav_downloads -> Toast.makeText(context, "Pressed downloads", Toast.LENGTH_LONG).show()
+                R.id.nav_downloads -> {
+                    findNavController().navigate(R.id.action_bottomMenuFragment_to_PrivacyFragment)
+                }
                 R.id.nav_menu -> {
                     findNavController().navigate(R.id.action_bottomMenuFragment_to_fullMenuFragment)
                 }
