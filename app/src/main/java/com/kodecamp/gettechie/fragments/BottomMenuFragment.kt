@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.kodecamp.gettechie.R
@@ -17,25 +18,31 @@ class BottomMenuFragment : Fragment() {
         arguments?.let {
 
         }
-    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val bottomNavView: NavigationView? = activity?.findViewById(R.id.bottomNavigationView)
-        bottomNavView?.setOnClickListener{
-            when(it.id){
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val bottomNavView: BottomNavigationView? = activity?.findViewById(R.id.bottomNavigationView)
+        bottomNavView?.setOnItemSelectedListener{
+            when(it.itemId){
                 R.id.nav_home -> Toast.makeText(context, "Pressed home", Toast.LENGTH_LONG).show()
                 R.id.nav_explore -> Toast.makeText(context, "Pressed explore", Toast.LENGTH_LONG).show()
                 R.id.nav_downloads -> Toast.makeText(context, "Pressed downloads", Toast.LENGTH_LONG).show()
-                R.id.nav_menu -> Toast.makeText(context, "Pressed menu", Toast.LENGTH_LONG).show()
+                R.id.nav_menu -> {
+                    findNavController().navigate(R.id.action_bottomMenuFragment_to_fullMenuFragment)
+                }
                 else -> {
                 }
 
             }
             true
         }
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_bottom_menu, container, false)
     }
