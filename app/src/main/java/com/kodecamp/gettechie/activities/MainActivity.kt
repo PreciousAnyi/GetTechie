@@ -8,6 +8,7 @@ import com.facebook.CallbackManager
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.navigation.NavigationView
 import com.kodecamp.gettechie.R
 import com.kodecamp.gettechie.databinding.ActivityMainBinding
 import com.kodecamp.gettechie.fragments.SignUpFragmentDirections
@@ -23,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val navHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navCon = navHost.navController
+
+
 //        val theText: TextView = findViewById(R.id.text)
 //        theText.setOnClickListener {
 //            setContentView(R.layout.create_password)
@@ -41,6 +44,9 @@ class MainActivity : AppCompatActivity() {
 //                startActivity(intent)
 //            }
 //        }
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        return navCon.navigateUp() || super.onSupportNavigateUp()
     }
 
     var backPressedTime: Long = 0

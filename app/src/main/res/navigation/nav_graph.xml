@@ -54,6 +54,9 @@
         <action
             android:id="@+id/action_signUpFragment_to_welcomeFragment2"
             app:destination="@id/welcomeFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/resetPasswordFragment"
@@ -78,12 +81,48 @@
             android:name="letter"
             app:argType="string" />
         <action
+            android:id="@+id/action_welcomeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
             android:id="@+id/action_welcomeFragment_to_bottomMenuFragment"
             app:destination="@id/bottomMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.kodecamp.gettechie.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_playListFragment"
+            app:destination="@id/playListFragment" />
+        <argument
+            android:name="letter"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_homeFragment_to_topRatedFragment"
+            app:destination="@id/topRatedFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_recommendedFragment"
+            app:destination="@id/recommendedFragment" />
     </fragment>
     <fragment
         android:id="@+id/bottomMenuFragment"
         android:name="com.kodecamp.gettechie.fragments.BottomMenuFragment"
         android:label="fragment_bottom_menu"
         tools:layout="@layout/fragment_bottom_menu" />
+    <fragment
+        android:id="@+id/playListFragment"
+        android:name="com.kodecamp.gettechie.fragments.popular_playListFragment"
+        android:label="Popular Courses"
+        tools:layout="@layout/fragment_play_list" />
+    <fragment
+        android:id="@+id/topRatedFragment"
+        android:name="com.kodecamp.gettechie.fragments.topRatedFragment"
+        android:label="Top Rated"
+        tools:layout="@layout/fragment_top_rated" />
+    <fragment
+        android:id="@+id/recommendedFragment"
+        android:name="com.kodecamp.gettechie.fragments.recommendedFragment"
+        android:label="Recommended for You"
+        tools:layout="@layout/fragment_recommended" />
 </navigation>

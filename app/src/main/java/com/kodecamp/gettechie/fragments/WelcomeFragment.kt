@@ -11,13 +11,13 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.red
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.kodecamp.gettechie.R
-import com.kodecamp.gettechie.databinding.FragmentSignUpBinding
 import com.kodecamp.gettechie.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {
@@ -143,6 +143,7 @@ class WelcomeFragment : Fragment() {
             v.setTextColor(Color.WHITE)
             v.backgroundTintList =
                 ContextCompat.getColorStateList(requireContext(), R.color.blue)
+            continueColor()
         }
         else if(v.currentTextColor == Color.WHITE) {
             if(clickedList.contains(v.text.toString())){
@@ -151,31 +152,44 @@ class WelcomeFragment : Fragment() {
             v.setTextColor(Color.BLACK)
             v.backgroundTintList =
                 ContextCompat.getColorStateList(requireContext(), R.color.white)
+            continueColor()
         }
 
     }
-//    private fun show_dialog() {
-//        MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialogTheme)
-//            .setTitle("Congratulations!")
+
+    private fun continueColor() {
+        if(clickedList.isEmpty()){
+            binding.continueButton.alpha =.25f
+        }
+        else if (clickedList.isNotEmpty()){
+            binding.continueButton.alpha =1f
+        }
+    }
+    private fun show_dialog() {
+        MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialogTheme)
+            .setTitle("Congratulations!")
 //            .setIcon(R.drawable.mark)
-//            .setMessage("Your account has been set up. Have a great learning time.")
-//            .setNegativeButton(
-//                "Back to Home"
-//            ) { dialogInterface, i -> }
-//            .show()
-//    }
+            .setMessage("Your account has been set up. Have a great learning time.")
+            .setNegativeButton(
+                "Back to Home"
+            ) { dialogInterface, i ->
+                var actionn=WelcomeFragmentDirections.actionWelcomeFragmentToHomeFragment(letter = binding.textView2.text.toString())
+                binding.continueButton.findNavController().navigate(actionn)
+            }
+            .show()
+    }
 
     private fun validateButton() {
-        Log.v("test2",clickedList.toString())
+//        Log.v("test2",clickedList.toString())
         if(clickedList.isEmpty()){
             val toast =
                 Toast.makeText(context, "Please Select Objects of Interest", Toast.LENGTH_LONG)
             toast.show()
         }
         else{
-            binding.continueButton.alpha =1f
-//            show_dialog()
-//            findNavController().navigate(R.id.action_welcomeFragment_to_welcomeFragment)
+
+            show_dialog()
+
         }
     }
 
@@ -188,21 +202,19 @@ class WelcomeFragment : Fragment() {
 
         if(UserName!="null"){
 
-            hi.append("Hi"+" "+ UserName)
+            hi.append(","+" "+ UserName)
 
         }
-        else{
+        else if(UserName=="null"){
             var hi=binding.textView2
             val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build()
             val check_log_in: GoogleSignInAccount? = GoogleSignIn.getLastSignedInAccount(requireContext())
-//            Log.v("test2","im here")
             if (check_log_in != null) {
-//                var fullName=hi.text.toString()
-                val UserName= check_log_in?.displayName
-                if (UserName != null) {
-                    hi.append(" "+ UserName.split(" ")[0])
+                val googleUserName= check_log_in?.displayName
+                if (googleUserName != null) {
+                    hi.append(","+" "+ googleUserName.split(" ")[0])
 
                 }
             }
