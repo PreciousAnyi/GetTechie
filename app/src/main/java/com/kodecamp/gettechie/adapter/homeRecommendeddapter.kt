@@ -31,7 +31,7 @@ class homeRecommendedAdapter (private var context: Context, private var dataset:
         holder.image.setImageResource(item.stringResource)
         holder.course.text=item.stringResource2
         holder.tutor.text=item.stringResource1
-        var mylist= item.stringResource
+//        var mylist= item.stringResource
 
         holder.image.setOnClickListener {
 //            var letters=holder.adapterPosition.toString()
