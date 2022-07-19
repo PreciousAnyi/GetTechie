@@ -17,4 +17,5 @@
     <color name="red">#FC0000</color>
     <color name="indicator_not_active">#D9D9D9</color>
     <color name="light_blue">#5D9ACA</color>
+    <color name="light_brown">#292728</color>
 </resources>
