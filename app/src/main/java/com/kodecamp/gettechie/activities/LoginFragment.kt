@@ -226,8 +226,8 @@ class LoginFragment : Fragment() {
                 override fun onSuccess(result: LoginResult) {
                     result.let {
                         findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
-                        val intent = Intent(context, MainActivity::class.java)
-                        startActivity(intent)
+//                        val intent = Intent(context, MainActivity::class.java)
+//                        startActivity(intent)
 
 //                        val fragTransaction = fragmentManager?.beginTransaction()
 //                        fragTransaction.replace(R.id.)

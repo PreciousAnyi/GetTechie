@@ -175,7 +175,7 @@ class WelcomeFragment : Fragment() {
         else{
             binding.continueButton.alpha =1f
 //            show_dialog()
-//            findNavController().navigate(R.id.action_welcomeFragment_to_welcomeFragment)
+            findNavController().navigate(R.id.action_welcomeFragment_to_bottomMenuFragment)
         }
     }
 
