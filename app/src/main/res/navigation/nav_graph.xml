@@ -92,6 +92,9 @@
         <action
             android:id="@+id/action_bottomMenuFragment_to_fullMenuFragment"
             app:destination="@id/fullMenuFragment" />
+        <action
+            android:id="@+id/action_bottomMenuFragment_to_PrivacyFragment"
+            app:destination="@id/PrivacyFragment" />
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
@@ -116,5 +119,12 @@
         <action
             android:id="@+id/action_fullMenuFragment_to_bottomMenuFragment"
             app:destination="@id/bottomMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/PrivacyFragment"
+        android:name="com.kodecamp.gettechie.fragments.PrivacyFragment"
+        android:label="fragment_privacy"
+        tools:layout="@layout/fragment_privacy">
+
     </fragment>
 </navigation>
