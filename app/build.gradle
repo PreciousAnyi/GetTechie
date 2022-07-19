@@ -12,7 +12,7 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
-        buildConfigField("String","YOUTUBE_API_KEY", '"AIzaSyBRWOMfLY8R1lRAI2Iou8EthHMMNI92FDA"')
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -30,7 +30,6 @@ android {
                 }
             }
         }
-
     }
 
 
@@ -67,6 +66,8 @@ dependencies {
     implementation("androidx.navigation:navigation-dynamic-features-fragment:2.5.0")
     implementation 'com.facebook.android:facebook-login:latest.release'
     implementation('com.romandanylyk:pageindicatorview:1.0.3')
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
 //    YoutubeAPI
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")

@@ -18,6 +18,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.kodecamp.gettechie.R
+import com.kodecamp.gettechie.databinding.FragmentSignUpBinding
 import com.kodecamp.gettechie.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {

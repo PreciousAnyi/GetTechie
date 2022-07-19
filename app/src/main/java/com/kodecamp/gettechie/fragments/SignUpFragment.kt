@@ -5,18 +5,24 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.facebook.CallbackManager
+import com.facebook.FacebookCallback
+import com.facebook.FacebookException
+import com.facebook.GraphRequest
+import com.facebook.login.LoginManager
+import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -26,10 +32,11 @@ import com.kodecamp.gettechie.R
 import com.kodecamp.gettechie.databinding.FragmentSignUpBinding
 import com.kodecamp.gettechie.viewmodels.SignUpViewModel
 import kotlinx.coroutines.launch
+import org.json.JSONObject
 
 
 class SignUpFragment : Fragment() {
-
+    lateinit var callbackManager: CallbackManager
     private  var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
     private lateinit var navCon: NavController
@@ -137,6 +144,9 @@ class SignUpFragment : Fragment() {
 //                findNavController().navigate(R.id.action_signUpFragment_to_welcomeFragment)
             }
         }
+        binding.fbLoginButton.setOnClickListener {
+            loginWithFacebook()
+        }
         return binding.root
     }
 
@@ -229,6 +239,7 @@ class SignUpFragment : Fragment() {
             findNavController().navigate(R.id.action_signUpFragment_to_welcomeFragment)
 //            Log.v("bloob","i'm working")
         }
+        callbackManager.onActivityResult(requestCode, resultCode, data)
     }
 
     private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
@@ -243,22 +254,22 @@ class SignUpFragment : Fragment() {
         lifecycleScope.launch {
             launch {
                 viewModel.email.collect {
-                    binding.EmailEdit.setText(viewModel.email.toString())
+                    binding.EmailEdit.setText(it)
                 }
             }
             launch {
                 viewModel.password.collect {
-                    binding.PasswordEdit.setText(viewModel.password.toString())
+                    binding.PasswordEdit.setText(it)
                 }
             }
             launch {
                 viewModel.confirmPassword.collect {
-                    binding.ConfirmPasswordEdit.setText(viewModel.confirmPassword.toString())
+                    binding.ConfirmPasswordEdit.setText(it)
                 }
             }
             launch {
                 viewModel.name.collect {
-                    binding.NameEdit.setText(viewModel.name.toString())
+                    binding.NameEdit.setText(it)
                 }
             }
             super.onResume()
@@ -272,5 +283,54 @@ class SignUpFragment : Fragment() {
         viewModel.updateEmail(binding.EmailEdit.text.toString())
         viewModel.updatePassword(binding.PasswordEdit.text.toString())
         viewModel.updateConfirmPassword(binding.ConfirmPasswordEdit.text.toString())
+    }
+
+    private fun getFacebookData(obj: JSONObject?) {
+        val email = obj?.getString("email")
+        //        val theEmail : TextView = findViewById(R.id.mainTextTv)
+        //        theEmail.text = "EMAIL: ${email}"
+    }
+    private fun loginWithFacebook() {
+        callbackManager = CallbackManager.Factory.create()
+        LoginManager.getInstance().logInWithReadPermissions(this, setOf("email"))
+        LoginManager.getInstance()
+            .registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
+                override fun onSuccess(result: LoginResult) {
+                    result.let {
+                        findNavController().navigate(R.id.action_signUpFragment_to_welcomeFragment)
+//                        val intent = Intent(context, MainActivity::class.java)
+//                        startActivity(intent)
+
+//                        val fragTransaction = fragmentManager?.beginTransaction()
+//                        fragTransaction.replace(R.id.)
+
+                        val graphRequest =
+                            GraphRequest.newMeRequest(result?.accessToken) { `object`, response ->
+                                getFacebookData(`object`)
+                            }
+                        val parameters = Bundle()
+                        parameters.putString("fields", "email")
+                        graphRequest.parameters = parameters
+                        graphRequest.executeAsync()
+                    }
+                }
+
+                override fun onCancel() {
+                    Toast.makeText(
+                        context,
+                        "Facebook login cancelled",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+                override fun onError(error: FacebookException) {
+                    Toast.makeText(
+                        context,
+                        "Facebook login failed: ${error.toString()}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+            })
     }
 }
