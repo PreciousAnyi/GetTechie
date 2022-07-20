@@ -32,6 +32,10 @@ class FullMenu : Fragment() {
         settingsBtn?.setOnClickListener{
             findNavController().navigate(R.id.action_fullMenu_to_settingsFragment)
         }
+        val ProfileBtn : CardView? = activity?.findViewById(R.id.cV2)
+        ProfileBtn?.setOnClickListener{
+            findNavController().navigate(R.id.action_fullMenu_to_profileFragment)
+        }
     }
 
 

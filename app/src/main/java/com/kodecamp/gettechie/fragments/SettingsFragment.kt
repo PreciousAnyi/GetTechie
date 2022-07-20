@@ -14,7 +14,6 @@ import com.kodecamp.gettechie.R
 
 class SettingsFragment : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
