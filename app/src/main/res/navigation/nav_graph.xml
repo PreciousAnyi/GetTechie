@@ -119,6 +119,9 @@
         <action
             android:id="@+id/action_recommendedFragment_to_courseFragment"
             app:destination="@id/courseFragment" />
+        <action
+            android:id="@+id/action_recommendedFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/topRatedFragment"
@@ -134,12 +137,22 @@
         <action
             android:id="@+id/action_topRatedFragment_to_fullMenu2"
             app:destination="@id/fullMenu" />
+        <action
+            android:id="@+id/action_topRatedFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.kodecamp.gettechie.fragments.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_privacyFragment"
+            app:destination="@id/privacyFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_shareScreenFragment"
+            app:destination="@id/shareScreenFragment" />
+    </fragment>
     <fragment
         android:id="@+id/fullMenu"
         android:name="com.kodecamp.gettechie.fragments.FullMenu"
@@ -173,14 +186,13 @@
     <fragment
         android:id="@+id/courseFragment"
         android:name="com.kodecamp.gettechie.fragments.courseFragment"
-        android:label="fragment_course"
-        tools:layout="@layout/fragment_course" >
-        <argument
-            android:name="letter"
-            app:argType="string" />
+        tools:layout="@layout/fragment_course">
         <action
             android:id="@+id/action_courseFragment_to_screenVideoFragment"
             app:destination="@id/screenVideoFragment" />
+        <argument
+            android:name="letter"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/popular_playListFragment"
@@ -193,6 +205,9 @@
         <action
             android:id="@+id/action_popular_playListFragment_to_fullMenu"
             app:destination="@id/fullMenu" />
+        <action
+            android:id="@+id/action_popular_playListFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/screenVideoFragment"
@@ -203,4 +218,14 @@
             android:name="letter"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/privacyFragment"
+        android:name="com.kodecamp.gettechie.fragments.PrivacyFragment"
+        android:label="fragment_privacy"
+        tools:layout="@layout/fragment_privacy" />
+    <fragment
+        android:id="@+id/shareScreenFragment"
+        android:name="com.kodecamp.gettechie.fragments.ShareScreenFragment"
+        android:label="fragment_share_screen"
+        tools:layout="@layout/fragment_share_screen" />
 </navigation>

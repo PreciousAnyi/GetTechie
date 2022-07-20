@@ -17,6 +17,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationView
 import com.kodecamo.gettechie.adapter.*
 import com.kodecamp.gettechie.DataSource
@@ -153,6 +154,12 @@ class HomeFragment : Fragment() {
         }
 
 
+    }
+//
+
+    override fun onDestroy() {
+        super.onDestroy()
+        activity?.finish()
     }
 
 

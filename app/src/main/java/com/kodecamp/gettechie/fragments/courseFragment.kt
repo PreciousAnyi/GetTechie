@@ -39,7 +39,7 @@ class courseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        activity?.actionBar?.show()
         arguments?.let{
             letterId=it.getString(LETTER).toString()
         }
