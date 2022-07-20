@@ -6,42 +6,40 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.kodecamp.gettechie.R
-import com.kodecamp.gettechie.fragments.HomeFragmentDirections
+import com.kodecamp.gettechie.fragments.courseFragmentDirections
 import com.kodecamp.gettechie.fragments.popular_playListFragmentDirections
-import com.kodecamp.gettechie.model.Declaration
+import com.kodecamp.gettechie.model.Course
 
-private lateinit var navCon: NavController
-class homePopularAdapter (private var context: Context, private var dataset:List<Declaration>): RecyclerView.Adapter<homePopularAdapter.itemViewHolder>() {
+
+class courseAdapter (private var context: Context, private var dataset:List<Course>): RecyclerView.Adapter<courseAdapter.itemViewHolder>() {
+
+
     class itemViewHolder(var view: View): RecyclerView.ViewHolder(view){
-        var image: ImageView =view.findViewById(R.id.popularImg)
         var course: TextView =view.findViewById(R.id.course)
         var tutor: TextView =view.findViewById(R.id.tutor)
+        var vidButton: ImageView =view.findViewById(R.id.vid)
 
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): itemViewHolder {
         var adapterLayout=LayoutInflater.from(parent.context)
-            .inflate(R.layout.popularitem, parent,false)
+            .inflate(R.layout.courseitem, parent,false)
         return itemViewHolder(adapterLayout)
 
     }
 
     override fun onBindViewHolder(holder: itemViewHolder, position: Int) {
         var item=dataset[position]
-        holder.image.setImageResource(item.stringResource)
-        holder.course.text=item.stringResource2
-        holder.tutor.text=item.stringResource1
-        var mylist= item.stringResource
+        holder.course.text=item.stringResource
 
         holder.course.setOnClickListener {
-            var letters=holder.adapterPosition.toString()
-            var actionn=popular_playListFragmentDirections.actionPopularPlayListFragmentToCourseFragment(letter = letters)
-
+            holder.vidButton.setImageResource(R.drawable.ticksquare)
+            var letters=holder.adapterPosition.toInt()
+            var actionn= courseFragmentDirections.actionCourseFragmentToScreenVideoFragment(letter = letters)
             holder.view.findNavController().navigate(actionn)
 
         }

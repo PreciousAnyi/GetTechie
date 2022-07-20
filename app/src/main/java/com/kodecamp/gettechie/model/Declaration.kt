@@ -5,3 +5,6 @@ data class Declaration(
     val stringResource2: String,
     var stringResource: Int
 )
+data class Course(
+    var stringResource: String
+)

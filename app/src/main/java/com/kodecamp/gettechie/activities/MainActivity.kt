@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.facebook.CallbackManager
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationView
 import com.kodecamp.gettechie.R
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val navHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navCon = navHost.navController
-
+//        setupActionBarWithNavController(navCon)
 
 //        val theText: TextView = findViewById(R.id.text)
 //        theText.setOnClickListener {
@@ -49,36 +50,36 @@ class MainActivity : AppCompatActivity() {
         return navCon.navigateUp() || super.onSupportNavigateUp()
     }
 
-    var backPressedTime: Long = 0
-    override fun onBackPressed() {
-        if (backPressedTime + 3000 > System.currentTimeMillis()) {
-            show_dialog()
-        } else {
+//    var backPressedTime: Long = 0
+//    override fun onBackPressed() {
+//        if (backPressedTime + 3000 > System.currentTimeMillis()) {
+//            show_dialog()
+//        } else {
+//
+//            Toast.makeText(this, "Press back again to leave the app.", Toast.LENGTH_LONG).show()
+//        }
+//        backPressedTime = System.currentTimeMillis()
+//
+//    }
+//
+//    private fun show_dialog() {
+//        MaterialAlertDialogBuilder(this, R.style.AlertDialogTheme)
+//            .setTitle("Get Techie")
+//            .setMessage("Do you want to close this application.")
+//            .setPositiveButton(
+//                "YES"
+//            ) { dialogInterface, i ->
+//                finish()
+//            }
+//            .setNeutralButton(
+//                "CANCEL"
+//            ) { dialogInterface, i -> }
+//            .show()
+//    }
 
-            Toast.makeText(this, "Press back again to leave the app.", Toast.LENGTH_LONG).show()
-        }
-        backPressedTime = System.currentTimeMillis()
-
-    }
-
-    private fun show_dialog() {
-        MaterialAlertDialogBuilder(this, R.style.AlertDialogTheme)
-            .setTitle("Get Techie")
-            .setMessage("Do you want to close this application.")
-            .setPositiveButton(
-                "YES"
-            ) { dialogInterface, i ->
-                finish()
-            }
-            .setNeutralButton(
-                "CANCEL"
-            ) { dialogInterface, i -> }
-            .show()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        exitProcess(2)
-    }
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        exitProcess(2)
+//    }
 }
 

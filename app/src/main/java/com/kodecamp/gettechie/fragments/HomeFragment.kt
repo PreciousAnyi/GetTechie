@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.kodecamo.gettechie.adapter.*
 import com.kodecamp.gettechie.DataSource
@@ -41,19 +42,9 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val bottomNavView: NavigationView? = activity?.findViewById(R.id.bottomNavigationView)
-        bottomNavView?.setOnClickListener{
-            when(it.id){
-                R.id.nav_home -> Toast.makeText(context, "Pressed home", Toast.LENGTH_LONG).show()
-                R.id.nav_explore -> Toast.makeText(context, "Pressed explore", Toast.LENGTH_LONG).show()
-                R.id.nav_downloads -> Toast.makeText(context, "Pressed downloads", Toast.LENGTH_LONG).show()
-                R.id.nav_menu -> Toast.makeText(context, "Pressed menu", Toast.LENGTH_LONG).show()
-                else -> {
-                }
+//        val bottom=binding.bottomNavigationView
+//        bottom.
 
-            }
-            true
-        }
         // Inflate the layout for this fragment
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
@@ -71,7 +62,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.popularList.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_playListFragment)
+            findNavController().navigate(R.id.action_homeFragment_to_popular_playListFragment)
         }
 
 
@@ -108,6 +99,20 @@ class HomeFragment : Fragment() {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        val bottomNavView: BottomNavigationView? = activity?.findViewById(R.id.bottomNavigationView)
+        bottomNavView?.setOnItemSelectedListener{
+            when(it.itemId){
+                R.id.nav_home -> {}
+                R.id.nav_explore -> {}
+                R.id.nav_downloads -> {}
+                R.id.nav_menu -> {findNavController().navigate(R.id.action_homeFragment_to_fullMenu)}
+                else -> {
+                }
+
+            }
+            true
+        }
         recyclerView = binding.popularPlaylist
         recyclerView.layoutManager= StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
         recyclerView.adapter= PlaylistAdapter(requireContext(),myDataSource)

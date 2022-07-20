@@ -33,7 +33,7 @@ class FullMenu : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val menuBackBtn : ImageView? = activity?.findViewById(R.id.fullMenuBackBtn)
         menuBackBtn?.setOnClickListener{
-            findNavController().navigate(R.id.action_fullMenuFragment_to_bottomMenuFragment)
+//            findNavController().navigate(R.id.action_fullMenuFragment_to_bottomMenuFragment)
         }
     }
 

@@ -20,7 +20,7 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentProfileBinding.inflate(inflater, container, false)
         binding.editProfileButton.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
+//            findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
         }
 
 

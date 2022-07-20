@@ -27,7 +27,6 @@ class BottomMenuFragment : Fragment() {
                 R.id.nav_explore -> Toast.makeText(context, "Pressed explore", Toast.LENGTH_LONG).show()
                 R.id.nav_downloads -> Toast.makeText(context, "Pressed downloads", Toast.LENGTH_LONG).show()
                 R.id.nav_menu -> {
-                    findNavController().navigate(R.id.action_bottomMenuFragment_to_fullMenuFragment)
                 }
                 else -> {
                 }
