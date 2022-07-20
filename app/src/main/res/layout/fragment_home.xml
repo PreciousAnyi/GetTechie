@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.HomeFragment">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:background="#9E7878"
+                android:src="@drawable/rec"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="33dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/hi"
+                app:layout_constraintStart_toEndOf="@+id/username"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/notification"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/open_sans_bold"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="Let’s start learning!"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/username" />
+
+            <TextView
+                android:id="@+id/tracks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="Training Tracks"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
+            <TextView
+                android:id="@+id/popular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="Popular courses"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonLayout" />
+
+            <TextView
+                android:id="@+id/popular2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="Top Rated"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/popularPlaylist" />
+
+            <TextView
+                android:id="@+id/popular3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="Recommended for You"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/topratedPlaylist" />
+
+            <TextView
+                android:id="@+id/seeall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/open_sans_light"
+                android:text="See all"
+                android:textColor="#0A5693"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
+            <TextView
+                android:id="@+id/popularList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/open_sans_light"
+                android:text="See all"
+                android:textColor="#0A5693"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/popular" />
+
+            <TextView
+                android:id="@+id/topratedlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/open_sans_light"
+                android:text="See all"
+                android:textColor="#0A5693"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/popular2" />
+
+            <TextView
+                android:id="@+id/recommendedlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/open_sans_light"
+                android:text="See all"
+                android:textColor="#0A5693"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/popularList4" />
+
+            <TextView
+                android:id="@+id/popularList3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/open_sans_light"
+                android:text="1200 Available"
+                android:textColor="#312F30"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/popular2" />
+
+            <TextView
+                android:id="@+id/popularList4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/open_sans_light"
+                android:text="1200 Available"
+                android:textColor="#312F30"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/popular3" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/open_sans_light"
+                android:text="1200 Available"
+                android:textColor="#312F30"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/popular" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/buttonLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/seeall">
+
+                <Button
+                    android:id="@+id/product"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="Product Management"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    android:visibility="gone"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintStart_toEndOf="@+id/ethical"
+                    app:layout_constraintTop_toBottomOf="@+id/cloud"
+                    app:strokeColor="#5D9ACA"
+                    app:strokeWidth="1dp" />
+
+                <Button
+                    android:id="@+id/tech"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="Technical Writing"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    android:visibility="gone"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/python"
+                    app:strokeColor="#5D9ACA"
+                    app:strokeWidth="1dp" />
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:backgroundTint="#FFFFFF"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="UI/UX Design"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="#5D9ACA"
+                    app:strokeWidth="1dp" />
+
+                <Button
+                    android:id="@+id/graphics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="Graphics Design"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    android:visibility="gone"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ethical"
+                    app:strokeColor="#5D9ACA"
+                    app:strokeWidth="1dp" />
+
+                <Button
+                    android:id="@+id/data_structure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="Data Structure"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="#5D9ACA"
+                    app:strokeWidth="1dp" />
+
+                <Button
+                    android:id="@+id/net"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="Networking"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/data_structure"
+                    app:strokeColor="#5D9ACA"
+                    app:strokeWidth="1dp" />
+
+                <Button
+                    android:id="@+id/java"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="JavaScript"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    android:visibility="gone"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/data_analysis"
+                    app:strokeColor="#5D9ACA"
+                    app:strokeWidth="1dp" />
+
+                <Button
+                    android:id="@+id/ethical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="Ethical Hacking"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    android:visibility="gone"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/java"
+                    app:strokeColor="#5D9ACA"
+                    app:strokeWidth="1dp" />
+
+                <Button
+                    android:id="@+id/python"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="Python"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    android:visibility="gone"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/net"
+                    app:strokeColor="#5D9ACA"
+                    app:strokeWidth="1dp" />
+
+                <Button
+                    android:id="@+id/word"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="Word Processing"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintStart_toEndOf="@+id/data_analysis"
+                    app:layout_constraintTop_toBottomOf="@+id/web"
+                    app:strokeColor="#5D9ACA"
+                    app:strokeWidth="1dp" />
+
+                <Button
+                    android:id="@+id/data_analysis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="Data Analytics"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button1"
+                    app:strokeColor="#5D9ACA"
+                    app:strokeWidth="1dp" />
+
+                <Button
+                    android:id="@+id/web"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="Web Development"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintStart_toEndOf="@+id/button1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="#5D9ACA"
+                    app:strokeWidth="1dp" />
+
+                <Button
+                    android:id="@+id/cloud"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="Cloud Computing"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    android:visibility="gone"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintStart_toEndOf="@+id/java"
+                    app:layout_constraintTop_toBottomOf="@id/word"
+                    app:strokeColor="#5D9ACA"
+                    app:strokeWidth="1dp" />
+
+                <Button
+                    android:id="@+id/digital"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="Digital Marketing"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    android:visibility="gone"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tech"
+                    app:strokeColor="#5D9ACA"
+                    app:strokeWidth="1dp" />
+
+                <Button
+                    android:id="@+id/auto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="AutoCAD"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    android:visibility="gone"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/graphics"
+                    app:layout_constraintTop_toBottomOf="@+id/product"
+                    app:strokeColor="#5D9ACA"
+                    app:strokeWidth="1dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recommendedPlaylist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recommendedlist" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/topratedPlaylist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/popularList3" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/popularPlaylist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/searchContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="8dp"
+                android:inputType="textEmailAddress"
+                android:lineSpacingExtra="16sp"
+                android:textAlignment="textStart"
+                android:textSize="16sp"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.533"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/searchEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_baseline_search_24"
+                    android:hint="Search for courses"
+                    android:inputType="none|text"
+                    android:textColor="#040303"
+                    android:textColorHint="#000000"
+                    android:textSize="16sp"
+                    tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav" />
+</androidx.constraintlayout.widget.ConstraintLayout>

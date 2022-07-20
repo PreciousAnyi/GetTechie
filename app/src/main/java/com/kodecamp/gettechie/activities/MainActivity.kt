@@ -1,17 +1,11 @@
 package com.kodecamp.gettechie.activities
 
 import android.os.Bundle
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.facebook.CallbackManager
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.kodecamp.gettechie.R
 import com.kodecamp.gettechie.databinding.ActivityMainBinding
-import com.kodecamp.gettechie.fragments.SignUpFragmentDirections
-import kotlin.system.exitProcess
 
 
 class MainActivity : AppCompatActivity() {
@@ -23,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val navHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navCon = navHost.navController
+//        setupActionBarWithNavController(navCon)
+
 //        val theText: TextView = findViewById(R.id.text)
 //        theText.setOnClickListener {
 //            setContentView(R.layout.create_password)
@@ -42,37 +38,57 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        }
     }
-
+    override fun onSupportNavigateUp(): Boolean {
+        return navCon.navigateUp() || super.onSupportNavigateUp()
+    }
     var backPressedTime: Long = 0
-    override fun onBackPressed() {
-        if (backPressedTime + 3000 > System.currentTimeMillis()) {
-            show_dialog()
-        } else {
+//    override fun onBackPressed():Boolean {
+//        if (backPressedTime + 3000 > System.currentTimeMillis()) {
+//            show_dialog()
+//            return true
+//        } else {
+//
+//            Toast.makeText(requireContext(), "Press back again to leave the app.", Toast.LENGTH_LONG).show()
+//            return false
+//        }
+//        backPressedTime = System.currentTimeMillis()
+//
+//
+//    }
+//
+//    private fun show_dialog() {
+//        MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialogTheme)
+//            .setTitle("Get Techie")
+//            .setMessage("Do you want to close this application.")
+//            .setPositiveButton(
+//                "YES"
+//            ) { dialogInterface, i ->
+//                activity?.finish()
+//            }
+//            .setNeutralButton(
+//                "CANCEL"
+//            ) { dialogInterface, i -> }
+//            .show()
+//    }
+//
+//    private fun show_dialog() {
+//        MaterialAlertDialogBuilder(this, R.style.AlertDialogTheme)
+//            .setTitle("Get Techie")
+//            .setMessage("Do you want to close this application.")
+//            .setPositiveButton(
+//                "YES"
+//            ) { dialogInterface, i ->
+//                finish()
+//            }
+//            .setNeutralButton(
+//                "CANCEL"
+//            ) { dialogInterface, i -> }
+//            .show()
+//    }
 
-            Toast.makeText(this, "Press back again to leave the app.", Toast.LENGTH_LONG).show()
-        }
-        backPressedTime = System.currentTimeMillis()
-
-    }
-
-    private fun show_dialog() {
-        MaterialAlertDialogBuilder(this, R.style.AlertDialogTheme)
-            .setTitle("Get Techie")
-            .setMessage("Do you want to close this application.")
-            .setPositiveButton(
-                "YES"
-            ) { dialogInterface, i ->
-                finish()
-            }
-            .setNeutralButton(
-                "CANCEL"
-            ) { dialogInterface, i -> }
-            .show()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        exitProcess(2)
-    }
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        exitProcess(2)
+//    }
 }
 

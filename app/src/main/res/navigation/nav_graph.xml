@@ -54,9 +54,6 @@
         <action
             android:id="@+id/action_signUpFragment_to_welcomeFragment2"
             app:destination="@id/welcomeFragment" />
-        <action
-            android:id="@+id/action_signUpFragment_to_welcomeFragment3"
-            app:destination="@id/welcomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/resetPasswordFragment"
@@ -81,26 +78,93 @@
             android:name="letter"
             app:argType="string" />
         <action
-            android:id="@+id/action_welcomeFragment_to_bottomMenuFragment"
-            app:destination="@id/bottomMenuFragment" />
+            android:id="@+id/action_welcomeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/bottomMenuFragment"
-        android:name="com.kodecamp.gettechie.fragments.BottomMenuFragment"
-        android:label="fragment_bottom_menu"
-        tools:layout="@layout/fragment_bottom_menu" >
+        android:id="@+id/homeFragment"
+        android:name="com.kodecamp.gettechie.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <argument
+            android:name="letter"
+            app:argType="string" />
         <action
-            android:id="@+id/action_bottomMenuFragment_to_fullMenuFragment"
-            app:destination="@id/fullMenuFragment" />
+            android:id="@+id/action_homeFragment_to_popular_playListFragment"
+            app:destination="@id/popular_playListFragment" />
         <action
-            android:id="@+id/action_bottomMenuFragment_to_PrivacyFragment"
-            app:destination="@id/PrivacyFragment" />
+            android:id="@+id/action_homeFragment_to_recommendedFragment"
+            app:destination="@id/recommendedFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_topRatedFragment"
+            app:destination="@id/topRatedFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_fullMenu"
+            app:destination="@id/fullMenu" />
+        <action
+            android:id="@+id/action_homeFragment_to_courseFragment"
+            app:destination="@id/courseFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_fullMenu2"
+            app:destination="@id/fullMenu" />
     </fragment>
     <fragment
-        android:id="@+id/editProfileFragment"
-        android:name="com.kodecamp.gettechie.fragments.EditProfileFragment"
-        android:label="fragment_edit_profile"
-        tools:layout="@layout/fragment_edit_profile" />
+        android:id="@+id/recommendedFragment"
+        android:name="com.kodecamp.gettechie.fragments.recommendedFragment"
+        android:label="fragment_recommended"
+        tools:layout="@layout/fragment_recommended" >
+        <action
+            android:id="@+id/action_recommendedFragment_to_fullMenu"
+            app:destination="@id/fullMenu" />
+        <action
+            android:id="@+id/action_recommendedFragment_to_courseFragment"
+            app:destination="@id/courseFragment" />
+        <action
+            android:id="@+id/action_recommendedFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/topRatedFragment"
+        android:name="com.kodecamp.gettechie.fragments.topRatedFragment"
+        android:label="fragment_top_rated"
+        tools:layout="@layout/fragment_top_rated" >
+        <action
+            android:id="@+id/action_topRatedFragment_to_fullMenu"
+            app:destination="@id/fullMenu" />
+        <action
+            android:id="@+id/action_topRatedFragment_to_courseFragment"
+            app:destination="@id/courseFragment" />
+        <action
+            android:id="@+id/action_topRatedFragment_to_fullMenu2"
+            app:destination="@id/fullMenu" />
+        <action
+            android:id="@+id/action_topRatedFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.kodecamp.gettechie.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_privacyFragment"
+            app:destination="@id/privacyFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_shareScreenFragment"
+            app:destination="@id/shareScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullMenu"
+        android:name="com.kodecamp.gettechie.fragments.FullMenu"
+        android:label="fragment_full_menu"
+        tools:layout="@layout/fragment_full_menu" >
+        <action
+            android:id="@+id/action_fullMenu_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_fullMenu_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.kodecamp.gettechie.fragments.ProfileFragment"
@@ -111,20 +175,57 @@
             app:destination="@id/editProfileFragment" />
     </fragment>
     <fragment
-        android:id="@+id/fullMenuFragment"
-        android:name="com.kodecamp.gettechie.fragments.FullMenu"
-        android:label="fragment_full_menu"
-        tools:layout="@layout/fragment_full_menu"
-        >
+        android:id="@+id/editProfileFragment"
+        android:name="com.kodecamp.gettechie.fragments.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
         <action
-            android:id="@+id/action_fullMenuFragment_to_bottomMenuFragment"
-            app:destination="@id/bottomMenuFragment" />
+            android:id="@+id/action_editProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
-        android:id="@+id/PrivacyFragment"
+        android:id="@+id/courseFragment"
+        android:name="com.kodecamp.gettechie.fragments.courseFragment"
+        tools:layout="@layout/fragment_course">
+        <action
+            android:id="@+id/action_courseFragment_to_screenVideoFragment"
+            app:destination="@id/screenVideoFragment" />
+        <argument
+            android:name="letter"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/popular_playListFragment"
+        android:name="com.kodecamp.gettechie.fragments.popular_playListFragment"
+        android:label="fragment_play_list"
+        tools:layout="@layout/fragment_play_list" >
+        <action
+            android:id="@+id/action_popular_playListFragment_to_courseFragment"
+            app:destination="@id/courseFragment" />
+        <action
+            android:id="@+id/action_popular_playListFragment_to_fullMenu"
+            app:destination="@id/fullMenu" />
+        <action
+            android:id="@+id/action_popular_playListFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/screenVideoFragment"
+        android:name="com.kodecamp.gettechie.fragments.screenVideoFragment"
+        android:label="fragment_screen_video"
+        tools:layout="@layout/fragment_screen_video" >
+        <argument
+            android:name="letter"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/privacyFragment"
         android:name="com.kodecamp.gettechie.fragments.PrivacyFragment"
         android:label="fragment_privacy"
-        tools:layout="@layout/fragment_privacy">
-
-    </fragment>
+        tools:layout="@layout/fragment_privacy" />
+    <fragment
+        android:id="@+id/shareScreenFragment"
+        android:name="com.kodecamp.gettechie.fragments.ShareScreenFragment"
+        android:label="fragment_share_screen"
+        tools:layout="@layout/fragment_share_screen" />
 </navigation>
