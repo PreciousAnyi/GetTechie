@@ -14,9 +14,9 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.GetTechie.SplashScreen" parent="Theme.GetTechie">
-        <item name="android:windowBackground">@drawable/splash_screen</item>
+    <!--<style name="Theme.GetTechie.SplashScreen" parent="Theme.GetTechie">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
-    </style>
+    </style>-->
+
 </resources>

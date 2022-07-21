@@ -45,7 +45,7 @@
             android:name=".activities.MainActivity"
             android:exported="true"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:theme="@style/Theme.GetTechie.SplashScreen">
+            android:theme="@style/Theme.GetTechie">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

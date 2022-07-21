@@ -1,4 +1,5 @@
 package com.kodecamp.gettechie.fragments
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,13 +22,21 @@ class ThirdOnboardingScreen : Fragment() {
         view.findViewById<Button>(R.id.signup_button).setOnClickListener {
 
             findNavController().navigate(R.id.action_fragmentOnboarding_to_signUpFragment)
+            onBoardingFinished()
         }
         view.findViewById<TextView>(R.id.loginTV).setOnClickListener {
             findNavController().navigate(R.id.action_fragmentOnboarding_to_loginFragment)
+            onBoardingFinished()
         }
 
         return view
     }
 
+    private fun onBoardingFinished() {
+        val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putBoolean("Finished", true)
+        editor.apply()
+    }
 
 }
